@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support | Simple IG Analyser</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon128.png?v=2">
+    <svg style="display: none;">
+        <symbol id="icon-copy" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></symbol>
+    </svg>
+</head>
+<body>
+    <div class="container">
+       
+
+        <header>
+            
+            <h1>Simple IG Analyser</h1>
+            <p class="tagline">Official Support Center</p>
+        </header>
+         <nav class="top-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="policy.html" class="nav-link">Privacy Policy</a>
+            <a href="terms.html" class="nav-link">Terms of Use</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+
+        <section class="main-card">
+            <h2>How can we help you?</h2>
+            <p style="text-align: center; margin-bottom: 30px;">If you have any questions, need technical support, or want to activate your Pro Key, our team is here to assist you.</p>
+            
+            <div class="features">
+                <div class="feature-item" style="text-align: center;">
+                    <h3>Email Support</h3>
+                    <p>Send your inquiries to:</p>
+                    <p>
+                        <strong id="support-email">simple.ig.analyser@gmail.com</strong>
+                        <button class="copy-btn" id="copy-email-btn" data-copy="simple.ig.analyser@gmail.com" title="Copy Email">
+                            <svg class="copy-icon"><use href="#icon-copy"></use></svg>
+                            <svg class="copy-check-icon"><use href="#icon-check"></use></svg>
+                        </button>
+                    </p>
+                    <p><small style="color: var(--text-muted);">We usually respond within 24 hours.</small></p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Pro Key Activation</h3>
+                    <p>If you have completed a payment (PayPal or Crypto), please email us with:</p>
+                    <ul style="font-size: 0.9em; color: var(--text-muted); padding-left: 15px;">
+                        <li>Your exact Instagram Username</li>
+                        <li>A screenshot of the transaction or the TXID</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="action-group">
+                <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Simple IG Analyser</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyBtn = document.getElementById('copy-email-btn');
+            if(copyBtn) {
+                const emailText = copyBtn.getAttribute('data-copy');
+                copyBtn.addEventListener('click', () => {
+                    navigator.clipboard.writeText(emailText).then(() => {
+                        copyBtn.classList.add('copied');
+                        setTimeout(() => { copyBtn.classList.remove('copied'); }, 1500);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
